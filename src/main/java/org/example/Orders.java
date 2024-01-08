@@ -60,7 +60,7 @@ public class Orders {
      */
     @Override
     public String toString() {
-        return "Pedido{" + "cod_ped=" + cod_ped + ", nom_cliente=" + nom_cliente + ", dir_entrega=" + dir_entrega + ", platones_hembra=" + platones_hembra + ", platones_macho=" + platones_macho + ", numcliente=" + numcliente + '}';
+        return "Pedido{" + "cod_ped=" + cod_ped + ", nom_cliente=" + nom_cliente + ", dir_entrega=" + dir_entrega + ", platones_hembra=" + platones_hembra + ", platones_macho=" + platones_macho + ", numcliente=" + numcliente + "fecha: "+Orders.fecha()+'}';
     }
 
     public int getNumcliente() {

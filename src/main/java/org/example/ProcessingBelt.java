@@ -63,13 +63,18 @@ public class ProcessingBelt extends Thread{
                 camion = new Trucks(p); //creamos el camión con su matricula y el pedido
 
                 //obtenemos los valores de los atributos con los métodos get y los mostramos
-                System.out.println("______________________________________________________________________");
-                System.out.println("la " + getName() + " preparada para procesar pedidos\n");
-                System.out.println("\tPlantas del pedido:\nHembras: " + p.getPlatones_hembra()
-                        + "\nMachos: " + p.getPlatones_macho()
-                        + "\nTotal plantas pedido: " + (p.getPlatones_hembra() + p.getPlatones_macho())
-                        + "\nEl pedido: " + p.getCod_ped() + " se entregará en la dirección: " + p.getDir_entrega() + ""
-                        + " por el camión: " + camion.getMatricula());
+                StringBuilder stringBuilder = new StringBuilder();
+                stringBuilder.append("______________________________________________________________________").append("\n");
+                stringBuilder.append("La ").append(getName()).append(" preparada para procesar pedidos").append("\n");
+                stringBuilder.append("Plantas del pedido:\n");
+                stringBuilder.append("\tHembras: ").append(p.getPlatones_hembra()).append("\n");
+                stringBuilder.append("\tMachos: ").append(p.getPlatones_macho()).append("\n");
+                stringBuilder.append("Total plantas pedido: ").append(p.getPlatones_hembra() + p.getPlatones_macho()).append("\n");
+                stringBuilder.append("El pedido: ").append(p.getCod_ped()).append(" se entregará en la dirección: ").append(p.getDir_entrega());
+                stringBuilder.append(" por el camión: ").append(camion.getMatricula());
+
+                System.out.println(stringBuilder);
+
 
                 System.out.println("preparando entrega....");
 //calculamos el total de plantas que cada hilo ha gestionado

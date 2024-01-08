@@ -23,20 +23,7 @@ public class Main {
         this.cola = new ArrayList();
     }
 
-    /**
-     * Método visualizar pedidos.
-     * Permite mediante un iterador recorrer el arraylist y mostrar los pedidos
-     * que hay en la cola.
-     */
-    public void visualizar_pedidos() {
 
-        Iterator<Orders> it = cola.iterator();
-        while (it.hasNext()) {
-            Orders item = it.next();
-            System.out.println(item.toString());
-
-        }
-    }
 
     public static void main(String[] args) {
 
@@ -45,18 +32,7 @@ public class Main {
         int cintas = ProcessingBelt.numCintas(); //le pasamos el número de cintas a una variable
         int num_ped = p.generarPedidos(); //generamos el número de pedidos
 
-
-
-        System.out.println("BIENVENIDOS AL ROBLE PERENNE\n"
-                + "Vivero especializado en plantón de pistacho\n"
-                + "Año: 2021\n"
-                + "********************************************");
-        System.out.println("-------------------------------------");
-        System.out.println("Simulando cola de pedidos. Crearemos un número aleatorio de pedidos entre 5 y 25");
-        System.out.println("-------------------------------------");
-
-        System.out.println("Resumen de pedidos del Vivero");
-        System.out.println("Total de pedidos " + num_ped);
+        interfaz(num_ped);
 
         for (int i = 1; i <= num_ped; i++) { //creamos los pedidos y los añadimos a la cola
             Orders ped = new Orders();
@@ -97,5 +73,18 @@ public class Main {
 
 
 
+    }
+
+    private static void interfaz(int num_ped) {
+        System.out.println("BIENVENIDOS AL ROBLE PERENNE\n"
+                + "Vivero especializado en plantón de pistacho\n"
+                + "Año: 2021\n"
+                + "********************************************");
+        System.out.println("-------------------------------------");
+        System.out.println("Simulando cola de pedidos. Crearemos un número aleatorio de pedidos entre 5 y 25");
+        System.out.println("-------------------------------------");
+
+        System.out.println("Resumen de pedidos del Vivero");
+        System.out.println("Total de pedidos " + num_ped);
     }
 }
